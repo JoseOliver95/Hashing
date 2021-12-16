@@ -202,7 +202,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_buscActionPerformed
 
     private void elimiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimiActionPerformed
-        
+String dcla = cl.getText();
+        String esp = "\t\t";
+        String c = "Clave del libro"+esp+"Nombre del libro"+"\t"+"Autor\n";
+        ta.setText("");
+        ta.append(c);
+        TablaHash.elim(dcla);        
     }//GEN-LAST:event_elimiActionPerformed
 
     private void guarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guarActionPerformed
