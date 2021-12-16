@@ -58,4 +58,32 @@ public class TablaHash {
             rec();
     }
     
+    public static void elim(String elem){
+            String cla = elem;
+            
+            //Se calcula la posición donde se 
+            //ingresará el elemento y se guarda en indiceArreglo
+            int indiceArreglo = Integer.parseInt(cla)%(tamanio-1);
+            
+            int clav = Integer.parseInt(cla);
+            int i=0;
+            String cll = arreglo[indiceArreglo].substring(0, 5);
+            while(arreglo[indiceArreglo]!="-1" && i<arreglo.length){
+                if(cll.equals(cla)){
+                    arreglo[indiceArreglo] = "-1";
+                    System.out.println("Se eliminó "+clav);
+                    JOptionPane.showMessageDialog(null,"Se eliminó "+clav);
+                }else{
+                    indiceArreglo++;
+                    if(cll.equals(cla)){
+                        arreglo[indiceArreglo] = "-1";
+                        System.out.println("Ocurrió una colisión en el índice "+(indiceArreglo-1)+" se eliminó "+indiceArreglo);
+                    }
+                }
+                indiceArreglo %= tamanio;
+                i++;
+            }
+            rec();
+    }
+    
 }
