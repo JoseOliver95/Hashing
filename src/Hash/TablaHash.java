@@ -83,6 +83,7 @@ public class TablaHash {
                 indiceArreglo %= tamanio;
                 i++;
             }
+            
             rec();
     }
     
