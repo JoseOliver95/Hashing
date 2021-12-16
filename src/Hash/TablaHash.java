@@ -57,5 +57,27 @@ public class TablaHash {
             arreglo[indiceArreglo] = elem;//Se guarda la información en la posición que se calculó con la función
             rec();
     }
-    
+public static String buscarClave(String elemento){
+        int indiceArreglo = Integer.parseInt(elemento)%(tamanio-1);
+        contador = 0;
+        String cll = arreglo[indiceArreglo].substring(0, 5);
+        System.out.println("Este es el substring "+cll);
+        int cl = Integer.parseInt(cll);
+        do{
+            if(cll.equals(elemento)){
+                System.out.println("El elemento "+elemento+" fuen encontrado en el índice "+indiceArreglo);
+                JOptionPane.showMessageDialog(null,"El elemento "+elemento+" fuen encontrado en el índice "+indiceArreglo);
+                return arreglo[indiceArreglo];
+                
+            }
+            indiceArreglo++;
+            indiceArreglo %= tamanio;
+            contador++;
+            if(contador > (tamanio-1)){
+                break;
+            }
+        }while(!"-1".equals(cll));
+        JOptionPane.showMessageDialog(null,"La clave "+elemento+" NO fue encontrada");
+        return "La clave "+elemento+" NO fue encontrada";
+    }    
 }

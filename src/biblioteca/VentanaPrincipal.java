@@ -199,7 +199,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     
     private void buscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscActionPerformed
-        
+        String cla = cl.getText();
+        TablaHash.buscarClave(cla);
     }//GEN-LAST:event_buscActionPerformed
 
     private void elimiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimiActionPerformed
